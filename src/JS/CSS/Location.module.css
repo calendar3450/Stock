@@ -1,0 +1,38 @@
+.List{
+    position:absolute;
+    right: 3%;
+    top:3%;
+    width: 15%;
+    height: 95vh;
+    margin: 5px;
+    overflow: auto;
+}
+
+.List::-webkit-scrollbar{
+    width: 10px;
+}
+
+.List::-webkit-scrollbar-thumb{
+    background-color:#e9e0a9
+}
+.CoinList{
+    list-style: none;
+}
+
+
+.Search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MainCoin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Main{
+    font-size: 32px;
+    color:orange;
+    font-family: Georgia, "맑은 고딕", serif;
+}
