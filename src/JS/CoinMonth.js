@@ -91,10 +91,11 @@ function MonthBitcoin() {
     />
       </span>  
         }
-    
+    <div>
         { listLoading ? (<h3>리스트 로딩중 입니다...</h3>) :
         <span className={Location.List}>
             <ul>
+                <a>리스트</a>
             {lists.map((coin) =>(
                 coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
                     <li key={coin.market} className={Location.CoinList}>
@@ -106,7 +107,7 @@ function MonthBitcoin() {
             </ul>
         </span>
         }
-    
+    </div>
     <span>
     <Link to ={`/coinWeek/${market}`} style={{textDecoration: 'none'}}>
         1주 

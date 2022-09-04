@@ -1,7 +1,7 @@
 import {useState,useEffect} from "react"
 import { Link } from "react-router-dom";
 import Location from './CSS/Location.module.css';
-import Color from './CSS/MainColor.module.css';
+import Main from './CSS/MainColor.module.css';
 
 //검색칸 꾸미기, 메인페이지 코인칸 테이블이 아닌 div로 바꾸기
 function Home() {
@@ -38,7 +38,6 @@ function Home() {
         <a className={Location.Main}>코인 시세를 보자구요!</a>
         </Link>
         <p/>
-
           {paprikaLoading ? (<h2>로딩중 입니다...</h2>):
           <div>
           <h1 className={Location.MainCoin}>주요 코인 시세 24H</h1>
@@ -50,21 +49,22 @@ function Home() {
           <h3 className={Location.MainCoin}>시세:{Math.ceil(paprikaCoin[6].quotes.KRW.price).toLocaleString()}\</h3>
           </div>
           }
-
-        <div className={Location.List}>
-          <input
+        <div>
+        <input
             type='text'
             placeholder="검색 할 코인"
             onChange={onChangeSearch}
             value={search}
             className={Location.Search}
           />
+        </div>
+        <div className={Location.List}>
           {loading ? (<h2>로딩중 입니다.....</h2>) :
-          <div className={Color.MainCoinList}>
+          <div className={Main.MainCoinList}>
             {coins.map((coin)=> (
               coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
                 search==='' ?
-                <div key={coin.market}>
+                <div key={coin.market} className={Main.MainCoins}>
                   <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
                         {coin.english_name},{coin.korean_name}
                       </Link>
