@@ -4,6 +4,16 @@
 }
 
 body{
-    background-color: bisque;
+    background-color: #e9ecf1;
     margin:0px;
+}
+
+.MainCoinList{
+    background-color: white;
+    margin:0px;
+    padding: 0.5rem;
+    line-height: 1rem;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
 }

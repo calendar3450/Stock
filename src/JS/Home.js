@@ -38,13 +38,6 @@ function Home() {
         <a className={Location.Main}>코인 시세를 보자구요!</a>
         </Link>
         <p/>
-        <input
-          type='text'
-          placeholder="검색 할 코인"
-          onChange={onChangeSearch}
-          value={search}
-          className={Location.Search}
-        />
 
           {paprikaLoading ? (<h2>로딩중 입니다...</h2>):
           <div>
@@ -57,39 +50,17 @@ function Home() {
           <h3 className={Location.MainCoin}>시세:{Math.ceil(paprikaCoin[6].quotes.KRW.price).toLocaleString()}\</h3>
           </div>
           }
-        {/* <div className={Location.List}>
-          {loading ? (<h2>로딩중 입니다.....</h2>) :
-          <table border='0' class={Color.tableColor}>
-            <tbody>
-            <tr>
-              {coins.map((coin)=>(
-                coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
-                  search===''?
-                  <tr key={coin.market}>
-                    <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
-                      {coin.english_name},{coin.korean_name}
-                    </Link>
-                  </tr>
-                  :
-                  search.includes(`${coin.english_name}`) || search.includes(`${coin.korean_name}`) ?
-                  <tr>
-                    <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
-                      {coin.english_name},{coin.korean_name}
-                    </Link>
-                  </tr> 
-                  :
-                  null
-              ))}
-          
-            </tr>
-            </tbody>
-          </table>
-}
-        </div> */}
-        
+
         <div className={Location.List}>
+          <input
+            type='text'
+            placeholder="검색 할 코인"
+            onChange={onChangeSearch}
+            value={search}
+            className={Location.Search}
+          />
           {loading ? (<h2>로딩중 입니다.....</h2>) :
-          <div>
+          <div className={Color.MainCoinList}>
             {coins.map((coin)=> (
               coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
                 search==='' ?

@@ -13,7 +13,7 @@
 }
 
 .List::-webkit-scrollbar-thumb{
-    background-color:#e9e0a9
+    background-color:white;
 }
 .CoinList{
     list-style: none;
