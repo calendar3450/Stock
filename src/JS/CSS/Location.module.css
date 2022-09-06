@@ -19,11 +19,15 @@
     list-style: none;
 }
 
-
 .Search{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: white;
 }
 .MainCoin{
     display: flex;
@@ -31,8 +35,3 @@
     align-items: center;
 }
 
-.Main{
-    font-size: 32px;
-    color:orange;
-    font-family: Georgia, "맑은 고딕", serif;
-}

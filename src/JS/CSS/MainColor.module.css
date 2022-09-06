@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+
 .tableColor{
     background-color: lemonchiffon;
     border-radius: 10px;
@@ -17,8 +19,12 @@ body{
     height: auto;
     width: auto;
     border-radius: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:black
 }
 
-.MainCoins{
-    
+.Main{
+    font-size: 32px;
+    color:orange;
+    font-family: 'Noto Sans KR', sans-serif;
 }

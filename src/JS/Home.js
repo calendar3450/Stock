@@ -35,9 +35,16 @@ function Home() {
       return(
         <div>
         <Link to='/' style={{textDecoration: 'none'}}>
-        <a className={Location.Main}>코인 시세를 보자구요!</a>
+        <a className={Main.Main}>코인 시세를 보자구요!</a>
         </Link>
         <p/>
+        <input
+            type='text'
+            placeholder="검색 할 코인"
+            onChange={onChangeSearch}
+            value={search}
+            className={Location.Search}
+          />
           {paprikaLoading ? (<h2>로딩중 입니다...</h2>):
           <div>
           <h1 className={Location.MainCoin}>주요 코인 시세 24H</h1>
@@ -49,14 +56,8 @@ function Home() {
           <h3 className={Location.MainCoin}>시세:{Math.ceil(paprikaCoin[6].quotes.KRW.price).toLocaleString()}\</h3>
           </div>
           }
+          
         <div>
-        <input
-            type='text'
-            placeholder="검색 할 코인"
-            onChange={onChangeSearch}
-            value={search}
-            className={Location.Search}
-          />
         </div>
         <div className={Location.List}>
           {loading ? (<h2>로딩중 입니다.....</h2>) :
