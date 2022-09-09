@@ -14,17 +14,20 @@ body{
     background-color: white;
     margin:0px;
     padding: 0.5rem;
-    border: 1px solid black;
+    border: 2px solid black;
     line-height: 1rem;
     height: auto;
     width: auto;
     border-radius: 10px;
     font-family: 'Noto Sans KR', sans-serif;
-    color:black
 }
 
 .Main{
     font-size: 32px;
     color:orange;
     font-family: 'Noto Sans KR', sans-serif;
+}
+
+.Coin{
+    text-decoration: none;
 }

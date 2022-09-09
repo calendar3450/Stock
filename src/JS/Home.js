@@ -67,14 +67,14 @@ function Home() {
                 search==='' ?
                 <div key={coin.market} className={Main.MainCoins}>
                   <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
-                        {coin.english_name},{coin.korean_name}
+                        {coin.korean_name}
                       </Link>
                   </div>
                   :
-                  search.includes(`${coin.english_name}`) || search.includes(`${coin.korean_name}`) ?
+                  search.includes(`${coin.korean_name}`) ?
                   <div>
-                    <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
-                      {coin.english_name},{coin.korean_name}
+                    <Link to={`/coinMonth/${coin.market}`}>
+                      <a className={Main.Coin}>{coin.korean_name}</a>
                     </Link>
                   </div>
                   :
