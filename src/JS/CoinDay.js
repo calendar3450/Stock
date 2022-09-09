@@ -93,7 +93,7 @@ function DayBitcoin() {
                 coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
                     <li key={coin.market} className={Location.CoinList}>
                         <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
-                        {coin.english_name},{coin.korean_name}
+                        {coin.korean_name}
                         </Link>
                     </li>
             ))}

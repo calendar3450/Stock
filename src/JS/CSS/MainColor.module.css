@@ -1,24 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
 
-.tableColor{
-    background-color: lemonchiffon;
-    border-radius: 10px;
-}
 
 body{
     background-color: #e9ecf1;
-    margin:0px;
+    margin: 0 auto;
+    max-width: 50%;
 }
 
 .MainCoinList{
-    background-color: white;
     margin:0px;
     padding: 0.5rem;
-    border: 2px solid black;
     line-height: 1rem;
     height: auto;
     width: auto;
-    border-radius: 10px;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -30,4 +24,21 @@ body{
 
 .Coin{
     text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    border-top:3px solid #d9d9d9;
+    background-color: white;
+    justify-content:center;
+}
+
+.MainCoinsCollection{
+    background-color: white;
+    width: 800px;
+    margin: 20px;
+    height: auto;
+    padding: 0rem;
+    border: 1px solid black;
+    border-radius: 1rem;
 }

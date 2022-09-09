@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+
+
 .List{
-    position:absolute;
-    right: 3%;
-    top:3%;
-    width: 15%;
+    position: fixed;
+    right: 20%;
+    top:5.5%;
     height: 95vh;
     margin: 5px;
     overflow: auto;
+    max-width: 400px;
+    border: 1px black;
+}
+
+.ListTop{
+    position: fixed;
+    top:2.5%;
+    right: 23.5%;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .List::-webkit-scrollbar{
@@ -14,9 +25,6 @@
 
 .List::-webkit-scrollbar-thumb{
     background-color:white;
-}
-.CoinList{
-    list-style: none;
 }
 
 .Search{
@@ -29,9 +37,11 @@
     padding-left: 10px;
     background-color: white;
 }
+
 .MainCoin{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 900px;
 }
 

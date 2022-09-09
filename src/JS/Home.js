@@ -38,15 +38,9 @@ function Home() {
         <a className={Main.Main}>코인 시세를 보자구요!</a>
         </Link>
         <p/>
-        <input
-            type='text'
-            placeholder="검색 할 코인"
-            onChange={onChangeSearch}
-            value={search}
-            className={Location.Search}
-          />
+        
           {paprikaLoading ? (<h2>로딩중 입니다...</h2>):
-          <div>
+          <div className={Main.MainCoinsCollection}>
           <h1 className={Location.MainCoin}>주요 코인 시세 24H</h1>
           <h2 className={Location.MainCoin}>BitCoin,비트코인: {paprikaCoin[0].quotes.KRW.percent_change_24h}%</h2>
           <h3 className={Location.MainCoin}>시세:{Math.ceil(paprikaCoin[0].quotes.KRW.price).toLocaleString()}\</h3>
@@ -56,34 +50,23 @@ function Home() {
           <h3 className={Location.MainCoin}>시세:{Math.ceil(paprikaCoin[6].quotes.KRW.price).toLocaleString()}\</h3>
           </div>
           }
-          
-        <div>
-        </div>
+        
         <div className={Location.List}>
+        <a className={Location.ListTop}>코인 리스트</a>
           {loading ? (<h2>로딩중 입니다.....</h2>) :
           <div className={Main.MainCoinList}>
             {coins.map((coin)=> (
               coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
-                search==='' ?
                 <div key={coin.market} className={Main.MainCoins}>
                   <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
-                        {coin.korean_name}
+                    <a className={Main.Coin}>{coin.korean_name}</a>
                       </Link>
                   </div>
-                  :
-                  search.includes(`${coin.korean_name}`) ?
-                  <div>
-                    <Link to={`/coinMonth/${coin.market}`}>
-                      <a className={Main.Coin}>{coin.korean_name}</a>
-                    </Link>
-                  </div>
-                  :
-                  null
             ))}
             </div>
 }
-        </div> 
-
+        </div>
+         
         </div>
       )
 }
