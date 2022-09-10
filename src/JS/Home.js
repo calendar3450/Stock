@@ -8,11 +8,8 @@ function Home() {
     const [coins,setCoins]=useState([]);
     const [loading,isLoading]=useState(true);
     const [paprikaLoading,isPaprikaLoading]=useState(true);
-    const [search,setSearch]=useState('');
     const [paprikaCoin,setpaprikaCoin]=useState([])
-    const onChangeSearch = (e)=>{
-      setSearch(e.target.value);
-    }
+
     //업비트로 리스트 뽑기.
     useEffect(()=> {
         fetch('https://api.upbit.com/v1/market/all')
@@ -33,12 +30,12 @@ function Home() {
   },[])
 
       return(
-        <div>
+        <div className={Main.Entire}>
         <Link to='/' style={{textDecoration: 'none'}}>
         <a className={Main.Main}>코인 시세를 보자구요!</a>
         </Link>
         <p/>
-        
+        <div className={Main.MainCoinNCoinList}>
           {paprikaLoading ? (<h2>로딩중 입니다...</h2>):
           <div className={Main.MainCoinsCollection}>
           <h1 className={Location.MainCoin}>주요 코인 시세 24H</h1>
@@ -52,7 +49,7 @@ function Home() {
           }
         
         <div className={Location.List}>
-        <a className={Location.ListTop}>코인 리스트</a>
+        {/* <a className={Location.ListTop}>코인 리스트</a> */}
           {loading ? (<h2>로딩중 입니다.....</h2>) :
           <div className={Main.MainCoinList}>
             {coins.map((coin)=> (
@@ -66,7 +63,7 @@ function Home() {
             </div>
 }
         </div>
-         
+        </div>
         </div>
       )
 }

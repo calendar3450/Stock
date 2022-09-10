@@ -2,10 +2,10 @@
 
 
 .List{
-    position: fixed;
+    /* position: fixed;
     right: 20%;
-    top:5.5%;
-    height: 95vh;
+    top:5.5%; */
+    height: 81vh;
     margin: 5px;
     overflow: auto;
     max-width: 400px;

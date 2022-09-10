@@ -5,6 +5,7 @@ body{
     background-color: #e9ecf1;
     margin: 0 auto;
     max-width: 50%;
+    height: 100%;
 }
 
 .MainCoinList{
@@ -35,10 +36,17 @@ body{
 
 .MainCoinsCollection{
     background-color: white;
-    width: 800px;
+    width: 700px;
     margin: 20px;
-    height: auto;
+    height: 400px;
     padding: 0rem;
     border: 1px solid black;
     border-radius: 1rem;
+}
+
+.MainCoinNCoinList{
+    display: flex;
+}
+.Entire{
+    padding: 2rem;
 }
