@@ -2,10 +2,9 @@ import {useState,useEffect} from "react"
 import ApexChart from 'react-apexcharts'
 import  {useParams} from "react-router-dom";
 import styles from "./CSS/Coin.module.css";
-import Location from './CSS/Location.module.css';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-//코인 리스트 따로 div로 묶은 후 스크롤 따로 넣기
+
 function MonthBitcoin() {
     const [coins,setCoins]=useState([]);
     const [lists,setLists]=useState([]);
@@ -31,14 +30,12 @@ function MonthBitcoin() {
         })
       },[market]);
 
-    // window.setTimeout('window.location.reload()',60000);
-
    return (
     <div>
     <div>
         {/* 홈화면  */}
         <Link to={`/`} style={{textDecoration: 'none'}}>
-            <h2 className={styles.Loading}>코인 시세를 보자구요! </h2>
+            <a className={styles.Main}>코인 시세를 보자구요!</a>
         </Link>
 
         {loading ? (<h2 >그래프를 가져오고 있습니다.</h2>) :
@@ -63,7 +60,7 @@ function MonthBitcoin() {
         ]}
         options={{
             title: {
-                text: `${coins[0].market} 가격: ${coins[0].trade_price} `,
+                text: `${coins[0].market} 가격: ${coins[0].trade_price} \ `,
                 align: 'left'
               },
             chart: {
@@ -89,25 +86,9 @@ function MonthBitcoin() {
             }
         }}
     />
+
       </span>  
         }
-    <div>
-        { listLoading ? (<h3>리스트 로딩중 입니다...</h3>) :
-        <span className={Location.List}>
-            <ul>
-                <a>리스트</a>
-            {lists.map((coin) =>(
-                coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
-                    <li key={coin.market} className={Location.CoinList}>
-                        <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
-                        {coin.korean_name}
-                        </Link>
-                    </li>
-            ))}
-            </ul>
-        </span>
-        }
-    </div>
     <span>
     <Link to ={`/coinWeek/${market}`} style={{textDecoration: 'none'}}>
         1주 
@@ -124,6 +105,21 @@ function MonthBitcoin() {
     </Link>
     </span>
     </div>
+    <div className={styles.List}>
+        {/* <a className={Location.ListTop}>코인 리스트</a> */}
+          {listLoading ? (<h2>로딩중 입니다.....</h2>) :
+          <div className={styles.MainCoinList}>
+            {lists.map((coin)=> (
+              coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
+                <div key={coin.market} className={styles.MainCoins}>
+                  <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
+                    <a className={styles.Coin}>{coin.korean_name}</a>
+                      </Link>
+                  </div>
+            ))}
+            </div>
+}
+        </div>
     </div>
    )
 

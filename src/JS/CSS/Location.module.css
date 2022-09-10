@@ -2,10 +2,8 @@
 
 
 .List{
-    /* position: fixed;
-    right: 20%;
-    top:5.5%; */
     height: 81vh;
+    width: 350px;
     margin: 5px;
     overflow: auto;
     max-width: 400px;
@@ -13,11 +11,12 @@
 }
 
 .ListTop{
-    position: fixed;
-    top:2.5%;
+    /* position: fixed;
+    top:2.5px;
     right: 23.5%;
     font-family: 'Noto Sans KR', sans-serif;
-}
+*/
+} 
 
 .List::-webkit-scrollbar{
     width: 10px;
@@ -25,6 +24,7 @@
 
 .List::-webkit-scrollbar-thumb{
     background-color:white;
+    border-radius: 2rem;
 }
 
 .Search{

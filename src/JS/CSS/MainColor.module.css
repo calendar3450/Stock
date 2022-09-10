@@ -4,8 +4,7 @@
 body{
     background-color: #e9ecf1;
     margin: 0 auto;
-    max-width: 50%;
-    height: 100%;
+    max-width: 800px;
 }
 
 .MainCoinList{
@@ -19,6 +18,8 @@ body{
 
 .Main{
     font-size: 32px;
+    position: relative;
+    left: 107px;
     color:orange;
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -47,6 +48,7 @@ body{
 .MainCoinNCoinList{
     display: flex;
 }
+
 .Entire{
     padding: 2rem;
 }

@@ -1,3 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+
 .Loading{
     color:orange;
+}
+
+body{
+    background-color: #e9ecf1;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.List{
+    height: 81vh;
+    width: 350px;
+    margin: 5px;
+    overflow: auto;
+    max-width: 400px;
+    border: 1px black;
+}
+
+.List::-webkit-scrollbar{
+    width: 10px;
+}
+
+.Main{
+    font-size: 32px;
+    position: relative;
+    left: 107px;
+    color:orange;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.List::-webkit-scrollbar-thumb{
+    background-color:white;
+    border-radius: 2rem;
+}
+
+.Coin{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    border-top:3px solid #d9d9d9;
+    background-color: white;
+    justify-content:center;
+}
+
+.MainCoinList{
+    margin:0px;
+    padding: 0.5rem;
+    line-height: 1rem;
+    height: auto;
+    width: auto;
+    font-family: 'Noto Sans KR', sans-serif;
 }
