@@ -47,9 +47,7 @@ function Home() {
           <h3 className={Location.MainCoin}>시세:{Math.ceil(paprikaCoin[6].quotes.KRW.price).toLocaleString()}\</h3>
           </div>
           }
-        
         <div className={Location.List}>
-        {/* <a className={Location.ListTop}>코인 리스트</a> */}
           {loading ? (<h2>로딩중 입니다.....</h2>) :
           <div className={Main.MainCoinList}>
             {coins.map((coin)=> (

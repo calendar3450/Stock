@@ -31,7 +31,7 @@ function MonthBitcoin() {
       },[market]);
 
    return (
-    <div>
+    <div className={styles.Entire}>
     <div>
         {/* 홈화면  */}
         <Link to={`/`} style={{textDecoration: 'none'}}>
@@ -41,7 +41,8 @@ function MonthBitcoin() {
         {loading ? (<h2 >그래프를 가져오고 있습니다.</h2>) :
         <span>
         <ApexChart
-        width="65%"
+        className={styles.Graph}
+        width="220%"
         type="candlestick"
         series={[
             {
