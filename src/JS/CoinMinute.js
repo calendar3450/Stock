@@ -13,7 +13,6 @@ function MinuteBitcoin() {
     const {market} = useParams();
     const [listLoading,setListLoading] = useState(true);
 
-    
     useEffect(()=> {
         fetch(`https://api.upbit.com/v1/candles/minutes/1?market=${market}&count=200`)
         .then(response => response.json())
