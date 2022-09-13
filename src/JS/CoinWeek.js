@@ -33,13 +33,18 @@ function WeekBitcoin() {
 
 
    return (
+    <div className={styles.Entire}>
     <div>
+        {/* 홈화면  */}
         <Link to={`/`} style={{textDecoration: 'none'}}>
-            <h2 className={styles.Loading}>코인 시세를 보자구요!</h2>
+            <a className={styles.Main}>코인 시세를 보자구요!</a>
         </Link>
+
         {loading ? (<h2 >그래프를 가져오고 있습니다.</h2>) :
+        <span>
         <ApexChart
-        width="50%"
+        className={styles.Graph}
+        width="220%"
         type="candlestick"
         series={[
             {
@@ -58,12 +63,11 @@ function WeekBitcoin() {
         ]}
         options={{
             title: {
-                text: `${coins[0].market} 가격: ${coins[0].trade_price}`,
+                text: `${coins[0].market} 가격: ${coins[0].trade_price} \ `,
                 align: 'left'
               },
             chart: {
                 type:'candlestick',
-                height:350,
                 background: "transparent",
             },
             yaxis: {
@@ -74,6 +78,7 @@ function WeekBitcoin() {
             xaxis:{
                 type: 'datetime'
             },
+            //음봉 양봉 색깔 변화하게 하기 
             plotOptions: {
                 candlestick: {
                     colors:{
@@ -84,25 +89,13 @@ function WeekBitcoin() {
             }
         }}
     />
-        
+
+      </span>  
         }
-        { listLoading ? (<h3>리스트 로딩중 입니다...</h3>) :
-        <span className={Location.List}>
-            <ul>
-            {lists.map((coin) =>(
-                coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
-                    <li key={coin.market} className={Location.CoinList}>
-                        <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
-                        {coin.korean_name}
-                        </Link>
-                    </li>
-            ))}
-            </ul>
-        </span>
-        }
+    <p/>
     <span>
     <Link to ={`/coinMonth/${market}`} style={{textDecoration: 'none'}}>
-        1달 
+        1달
     </Link>
     </span>
     <span>
@@ -116,10 +109,27 @@ function WeekBitcoin() {
     </Link>
     </span>
     </div>
+    <div className={styles.List}>
+        {/* <a className={Location.ListTop}>코인 리스트</a> */}
+          {listLoading ? (<h2>로딩중 입니다.....</h2>) :
+          <div className={styles.MainCoinList}>
+            {lists.map((coin)=> (
+              coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
+                <div key={coin.market} className={styles.MainCoins}>
+                  <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
+                    <a className={styles.Coin}>{coin.korean_name}</a>
+                      </Link>
+                  </div>
+            ))}
+            </div>
+}
+        </div>
+    </div>
    )
 
 }
 
+//typeScript 제대로 배우면 지워야징~
 WeekBitcoin.propTypes = {
     coins: PropTypes.arrayOf(
         PropTypes.shape({
@@ -132,5 +142,4 @@ WeekBitcoin.propTypes = {
         })
     )
 }
-
 export default WeekBitcoin;
