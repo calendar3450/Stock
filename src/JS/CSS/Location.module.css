@@ -10,14 +10,6 @@
     border: 1px black;
 }
 
-.ListTop{
-    /* position: fixed;
-    top:2.5px;
-    right: 23.5%;
-    font-family: 'Noto Sans KR', sans-serif;
-*/
-} 
-
 .List::-webkit-scrollbar{
     width: 10px;
 }

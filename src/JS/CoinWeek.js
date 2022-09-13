@@ -2,7 +2,6 @@ import {useState,useEffect} from "react"
 import ApexChart from 'react-apexcharts'
 import  {useParams} from "react-router-dom";
 import styles from "./CSS/Coin.module.css";
-import Location from './CSS/Location.module.css';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 //코인 리스트 따로 div로 묶은 후 스크롤 따로 넣기

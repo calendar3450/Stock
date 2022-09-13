@@ -2,7 +2,6 @@ import {useState,useEffect} from "react"
 import ApexChart from 'react-apexcharts'
 import  {useParams} from "react-router-dom";
 import styles from "./CSS/Coin.module.css";
-import Location from './CSS/Location.module.css';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
