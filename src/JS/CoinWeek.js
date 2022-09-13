@@ -62,7 +62,7 @@ function WeekBitcoin() {
         ]}
         options={{
             title: {
-                text: `${coins[0].market} 가격: ${coins[0].trade_price} \ `,
+                text: `${coins[0].market} 가격: ${coins[0].trade_price}원`,
                 align: 'left'
               },
             chart: {
