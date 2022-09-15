@@ -3,7 +3,7 @@
 
 .List{
     height: 81vh;
-    width: 350px;
+    width: 250px;
     margin: 5px;
     overflow: auto;
     max-width: 400px;

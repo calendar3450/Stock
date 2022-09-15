@@ -4,7 +4,7 @@
 body{
     background-color: #e9ecf1;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .MainCoinList{
@@ -19,7 +19,7 @@ body{
 .Main{
     font-size: 34px;
     position: relative;
-    left: 107px;
+    left: 195px;
     color:orange;
     font-family: 'Noto Sans KR', sans-serif;
 }

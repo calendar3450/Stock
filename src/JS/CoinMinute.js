@@ -43,7 +43,7 @@ function MinuteBitcoin() {
         <span>
         <ApexChart
         className={styles.Graph}
-        width="220%"
+        width="250%"
         type="candlestick"
         series={[
             {
