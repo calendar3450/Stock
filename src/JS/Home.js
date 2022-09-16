@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Location from './CSS/Location.module.css';
 import Main from './CSS/MainColor.module.css';
 
-//검색칸 꾸미기, 메인페이지 코인칸 테이블이 아닌 div로 바꾸기
 function Home() {
     const [coins,setCoins]=useState([]);
     const [loading,isLoading]=useState(true);

@@ -5,7 +5,6 @@ import styles from "./CSS/Coin.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-//코인 리스트 따로 div로 묶은 후 스크롤 따로 넣기
 function MinuteBitcoin() {
     const [coins,setCoins]=useState([]);
     const [lists,setLists]=useState([]);

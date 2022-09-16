@@ -28,7 +28,7 @@ function MonthBitcoin() {
           setLists(response);
           setListLoading(false);
         })
-      },[market]);
+      },[market]);//코인의 이름이 바뀌면 그래프도 바뀌게 하기.
 
    return (
     <div className={styles.Entire}>
@@ -90,6 +90,11 @@ function MonthBitcoin() {
 
       </span>  
         }
+    <input 
+    placeholder="얼마를 넣을건지 입력해주세요"
+    type='number'
+    className={styles.Price}
+    />
     <span>
     <p/>
     <Link to ={`/coinWeek/${market}`} style={{textDecoration: 'none'}}>
