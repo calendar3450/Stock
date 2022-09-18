@@ -52,3 +52,9 @@ body{
 .Entire{
     padding: 2rem;
 }
+.PersonalMoney{
+    font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
+    bottom: 630px;
+    left: 30px;
+}
