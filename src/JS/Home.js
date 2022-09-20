@@ -30,10 +30,6 @@ function Home() {
     })
   },[])
 
-    const Clicked=() =>{
-      setTotalMoney(20000);
-    }
-
       return(
         <div className={Main.Entire}>
         <Link to='/' style={{textDecoration: 'none'}}>
@@ -69,7 +65,6 @@ function Home() {
         </div>
         </div>
         <a className={Main.PersonalMoney}>가지고 있는 돈: {`${Math.ceil(totalMoney).toLocaleString()}`}원</a>
-        <button onClick={Clicked}>클릭!</button>
         </div>
         
       )
