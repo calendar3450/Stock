@@ -64,7 +64,7 @@ function Home() {
 }
         </div>
         </div>
-        <a className={Main.PersonalMoney}>가지고 있는 돈: {`${Math.ceil(totalMoney).toLocaleString()}`}원</a>
+        
         </div>
         
       )
