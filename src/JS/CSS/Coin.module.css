@@ -64,3 +64,10 @@
 .Price{
     width: 200px;
 }
+
+.ChangePeriod{
+    cursor: pointer;
+    border: 1px;
+    background-color: #e9ecf1;
+    
+}

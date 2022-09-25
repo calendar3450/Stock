@@ -90,25 +90,20 @@ function MonthBitcoin() {
 
       </span>  
         }
-    <input 
-    placeholder="얼마를 넣을건지 입력해주세요"
-    type='number'
-    className={styles.Price}
-    />
     <span>
     <p/>
-    <Link to ={`/coinWeek/${market}`} style={{textDecoration: 'none'}}>
-        1주 
+    <Link to ={`/coinWeek/${market}`}>
+        <button className={styles.ChangePeriod}> 1주 </button>
     </Link>
     </span>
     <span>
-    <Link to = {`/coinDay/${market}`} style={{textDecoration: 'none'}}>
-         1일
+    <Link to = {`/coinDay/${market}`}>
+        <button className={styles.ChangePeriod}> 1일 </button>
     </Link>
     </span>
     <span>
-    <Link to ={`/coinMinute/${market}`} style={{textDecoration: 'none'}}>
-        1분
+    <Link to ={`/coinMinute/${market}`}>
+        <button className={styles.ChangePeriod}> 1분 </button>
     </Link>
     </span>
     </div>

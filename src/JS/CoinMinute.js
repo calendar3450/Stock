@@ -92,18 +92,18 @@ function MinuteBitcoin() {
         }
     <p/>
     <span>
-    <Link to ={`/coinMonth/${market}`} style={{textDecoration: 'none'}}>
-        1달
+    <Link to ={`/coinMonth/${market}`}>
+        <button className={styles.ChangePeriod}> 1달 </button>
     </Link>
     </span>
     <span>
-    <Link to = {`/coinWeek/${market}`} style={{textDecoration: 'none'}}>
-         1주
+    <Link to = {`/coinWeek/${market}`}>
+        <button className={styles.ChangePeriod}> 1주 </button>
     </Link>
     </span>
     <span>
-    <Link to ={`/coinDay/${market}`} style={{textDecoration: 'none'}}>
-        1일
+    <Link to ={`/coinDay/${market}`}>
+        <button className={styles.ChangePeriod}> 1일 </button>
     </Link>
     </span>
     </div>

@@ -93,18 +93,18 @@ function WeekBitcoin() {
         }
     <p/>
     <span>
-    <Link to ={`/coinMonth/${market}`} style={{textDecoration: 'none'}}>
-        1달
+    <Link to ={`/coinMonth/${market}`}>
+        <button className={styles.ChangePeriod}> 1달 </button>
     </Link>
     </span>
     <span>
-    <Link to = {`/coinDay/${market}`} style={{textDecoration: 'none'}}>
-         1일
+    <Link to = {`/coinDay/${market}`}>
+    <button className={styles.ChangePeriod}> 1일 </button>
     </Link>
     </span>
     <span>
-    <Link to ={`/coinMinute/${market}`} style={{textDecoration: 'none'}}>
-        1분
+    <Link to ={`/coinMinute/${market}`}>
+    <button className={styles.ChangePeriod}> 1분 </button>
     </Link>
     </span>
     </div>
