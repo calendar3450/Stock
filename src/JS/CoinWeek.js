@@ -19,7 +19,7 @@ function WeekBitcoin() {
           setCoins(response);
           setLoading(false);
         })
-      },[])
+      },[market])
 
     useEffect(()=> {
         fetch('https://api.upbit.com/v1/market/all')
@@ -115,7 +115,7 @@ function WeekBitcoin() {
             {lists.map((coin)=> (
               coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
                 <div key={coin.market} className={styles.MainCoins}>
-                  <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
+                  <Link to={`/coinWeek/${coin.market}`} style={{textDecoration: 'none'}}>
                     <a className={styles.Coin}>{coin.korean_name}</a>
                       </Link>
                   </div>

@@ -19,7 +19,7 @@ function MinuteBitcoin() {
           setCoins(response);
           setLoading(false);
         })
-      },[]);
+      },[market]);
 
     useEffect(()=> {
         fetch('https://api.upbit.com/v1/market/all')
@@ -114,7 +114,7 @@ function MinuteBitcoin() {
             {lists.map((coin)=> (
               coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
                 <div key={coin.market} className={styles.MainCoins}>
-                  <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
+                  <Link to={`/coinMinute/${coin.market}`} style={{textDecoration: 'none'}}>
                     <a className={styles.Coin}>{coin.korean_name}</a>
                       </Link>
                   </div>

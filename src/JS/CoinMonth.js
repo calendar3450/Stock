@@ -28,7 +28,7 @@ function MonthBitcoin() {
           setLists(response);
           setListLoading(false);
         })
-      },[market]);//코인의 이름이 바뀌면 그래프도 바뀌게 하기.
+      },[market]);
 
    return (
     <div className={styles.Entire}>
