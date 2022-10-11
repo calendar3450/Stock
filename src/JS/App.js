@@ -5,7 +5,7 @@ import MinuteBitcoin from "./CoinMinute";
 import WeekBitcoin from "./CoinWeek";
 import DayBitcoin from "./CoinDay";
 
-function App() {
+const App = () => {
   return(
     <Router>
       <Routes>

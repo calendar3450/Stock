@@ -5,7 +5,7 @@ import styles from "./CSS/Coin.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-function MonthBitcoin() {
+const MonthBitcoin = () => {
     const [coins,setCoins]=useState([]);
     const [lists,setLists]=useState([]);
     const [loading,setLoading] = useState(true);

@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import Location from './CSS/Location.module.css';
 import Main from './CSS/MainColor.module.css';
 
-function Home() {
+const Home = ()=> {
     const [coins,setCoins]=useState([]);
     const [loading,isLoading]=useState(true);
     const [paprikaLoading,isPaprikaLoading]=useState(true);
     const [paprikaCoin,setpaprikaCoin]=useState([]);
-    const [totalMoney,setTotalMoney]=useState(100000000);
-    const [haveCoin]=useState([]);
 
     //업비트로 리스트 뽑기.
     useEffect(()=> {
