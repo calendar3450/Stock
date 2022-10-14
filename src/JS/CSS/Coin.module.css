@@ -10,8 +10,8 @@
 
 .List{
     position: relative;
-    left:100px;
-    top: 50px;
+    left:10px;
+    top: 10px;
     height: 90vh;
     margin: 5px;
     overflow: auto;
@@ -26,7 +26,7 @@
 .Main{
     font-size: 34px;
     position: relative;
-    left: 107px;
+    left: 240px;
     color:orange;
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -68,6 +68,15 @@
 .ChangePeriod{
     cursor: pointer;
     border: 1px;
-    background-color: #e9ecf1;
+    background-color: white;
     
+}
+
+.centerSquare{
+    position: relative;
+    top:20px;
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid gray;
+    padding: 0.5rem;
 }

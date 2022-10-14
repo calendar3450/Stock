@@ -1,6 +1,6 @@
 import {useState,useEffect} from "react"
 import ApexChart from 'react-apexcharts'
-import  {useParams} from "react-router-dom";
+import  {useParams,useLocation} from "react-router-dom";
 import styles from "./CSS/Coin.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
@@ -11,6 +11,8 @@ const MonthBitcoin = () => {
     const [loading,setLoading] = useState(true);
     const [listLoading,setListLoading] = useState(true);
     const {market} = useParams();
+    const location = useLocation();
+    let haveMoney = location.state.money;
 
     useEffect(()=> {
         fetch(`https://api.upbit.com/v1/candles/months?market=${market}&count=200`)
@@ -31,14 +33,19 @@ const MonthBitcoin = () => {
       },[market]);
 
    return (
+    
     <div className={styles.Entire}>
-    <div>
-        {/* 홈화면  */}
+        {loading ? (<h2>로딩중 입니다.</h2>) :
+        
+    <div className={styles.centerSquare}>
+
         <Link to={`/`} style={{textDecoration: 'none'}}>
             <a className={styles.Main}>코인 시세를 보자구요!</a>
         </Link>
-
-        {loading ? (<h2 >그래프를 가져오고 있습니다.</h2>) :
+    <div>
+        
+    
+        
         <span>
         <ApexChart
         className={styles.Graph}
@@ -89,24 +96,30 @@ const MonthBitcoin = () => {
     />
 
       </span>  
-        }
     <span>
     <p/>
-    <Link to ={`/coinWeek/${market}`}>
+    <Link to ={`/coinWeek/${market}`} state={{money: haveMoney}}>
         <button className={styles.ChangePeriod}> 1주 </button>
     </Link>
     </span>
     <span>
-    <Link to = {`/coinDay/${market}`}>
+    <Link to = {`/coinDay/${market}`} state={{money: haveMoney}}>
         <button className={styles.ChangePeriod}> 1일 </button>
     </Link>
     </span>
     <span>
-    <Link to ={`/coinMinute/${market}`}>
+    <Link to ={`/coinMinute/${market}`} state={{money: haveMoney}}>
         <button className={styles.ChangePeriod}> 1분 </button>
     </Link>
+    <br/>
+    
+    <h3>지금 가지고 있는돈: {Math.ceil(haveMoney).toLocaleString()}\</h3>
+    <input type='number' placeholder="몇개의 코인을 사실껀가요?"/>
+
     </span>
     </div>
+    </div>
+}
     <div className={styles.List}>
         {/* <a className={Location.ListTop}>코인 리스트</a> */}
           {listLoading ? (<h2>로딩중 입니다.....</h2>) :
@@ -114,7 +127,10 @@ const MonthBitcoin = () => {
             {lists.map((coin)=> (
               coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
                 <div key={coin.market} className={styles.MainCoins}>
-                  <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
+
+                  <Link to={`/coinMonth/${coin.market}`} 
+                        style={{textDecoration: 'none'}} 
+                        state={{money: haveMoney}}>
                     <a className={styles.Coin}>{coin.korean_name}</a>
                       </Link>
                   </div>
@@ -122,7 +138,9 @@ const MonthBitcoin = () => {
             </div>
 }
         </div>
+        
     </div>
+    
    )
 
 }

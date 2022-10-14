@@ -2,12 +2,14 @@ import {useState,useEffect} from "react"
 import { Link } from "react-router-dom";
 import Location from './CSS/Location.module.css';
 import Main from './CSS/MainColor.module.css';
+//마우스 호버애니메이션 넣기.실시간 가격 변동
 
 const Home = ()=> {
     const [coins,setCoins]=useState([]);
     const [loading,isLoading]=useState(true);
     const [paprikaLoading,isPaprikaLoading]=useState(true);
     const [paprikaCoin,setpaprikaCoin]=useState([]);
+    const [haveMoney, setHaveMoney] = useState(100000000);
 
     //업비트로 리스트 뽑기.
     useEffect(()=> {
@@ -53,9 +55,13 @@ const Home = ()=> {
             {coins.map((coin)=> (
               coin.market.includes('BTC-') || coin.market.includes('USDT-') ? null :
                 <div key={coin.market} className={Main.MainCoins}>
-                  <Link to={`/coinMonth/${coin.market}`} style={{textDecoration: 'none'}}>
+
+                  <Link to={`/coinMonth/${coin.market}`} 
+                        style={{textDecoration: 'none'}} 
+                        state={{money: haveMoney}}>
                     <a className={Main.Coin}>{coin.korean_name}</a>
                       </Link>
+
                   </div>
             ))}
             </div>
