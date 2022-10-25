@@ -2,7 +2,7 @@ import {useState,useEffect} from "react"
 import { Link } from "react-router-dom";
 import Location from './CSS/Location.module.css';
 import Main from './CSS/MainColor.module.css';
-//마우스 호버애니메이션 넣기.실시간 가격 변동
+//실시간 가격 변동
 
 const Home = ()=> {
     const [coins,setCoins]=useState([]);

@@ -10,8 +10,9 @@ const MonthBitcoin = () => {
     const [lists,setLists]=useState([]);
     const [loading,setLoading] = useState(true);
     const [listLoading,setListLoading] = useState(true);
-    const {market} = useParams();
+    const [coinCount,setCoinCount] = useState(0);
     const location = useLocation();
+    let {market} = useParams();
     let haveMoney = location.state.money;
 
     useEffect(()=> {
@@ -31,6 +32,17 @@ const MonthBitcoin = () => {
           setListLoading(false);
         })
       },[market]);
+    
+    const onclick = () => {
+        haveMoney=haveMoney
+        console.log(haveMoney);
+    }
+
+    const CoinOnChange = (e) => {
+        setCoinCount(e.target.value);
+        console.log(coinCount);
+    }
+
 
    return (
     
@@ -43,8 +55,6 @@ const MonthBitcoin = () => {
             <a className={styles.Main}>코인 시세를 보자구요!</a>
         </Link>
     <div>
-        
-    
         
         <span>
         <ApexChart
@@ -114,7 +124,12 @@ const MonthBitcoin = () => {
     <br/>
     
     <h3>지금 가지고 있는돈: {Math.ceil(haveMoney).toLocaleString()}\</h3>
-    <input type='number' placeholder="몇개의 코인을 사실껀가요?"/>
+    <input 
+    type='number' 
+    placeholder="몇개의 코인을 사실껀가요?"
+    onChange={CoinOnChange}
+    />
+    <button onClick = {onclick}>사기</button>
 
     </span>
     </div>

@@ -47,6 +47,10 @@
     justify-content:center;
 }
 
+.Coin:hover{
+    background-color: #d9d9d9;
+}
+
 .MainCoinList{
     margin:0px;
     padding: 0.5rem;
