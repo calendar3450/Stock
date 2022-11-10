@@ -12,7 +12,8 @@ const MinuteBitcoin = () => {
     const {market} = useParams();
     const [listLoading,setListLoading] = useState(true);
     const location = useLocation();
-    let haveMoney = location.state.money;
+    const [haveMoney,setHaveMoney] = useState(location.state.money);
+    const [coinCount,setCoinCount] = useState(0);
 
     useEffect(()=> {
         fetch(`https://api.upbit.com/v1/candles/minutes/1?market=${market}&count=200`)
@@ -31,7 +32,22 @@ const MinuteBitcoin = () => {
             setListLoading(false);
         })
         },[market]);
-    // window.setTimeout('window.location.reload()',60000);
+    const onclick = () => {
+    
+        if (haveMoney-(coins[0].trade_price*coinCount)<0) {
+            alert('돈이 부족합니다.');
+        }
+        else {
+            setHaveMoney(haveMoney-(coins[0].trade_price*coinCount))
+            // haveMoney = haveMoney-(coins[0].trade_price*coinCount);
+            console.log(haveMoney);
+        }
+        
+    }
+    //입력창에 코인 갯수 넣기.
+    const CoinOnChange = (e) => {
+        setCoinCount(e.target.value);
+    }
    return (
     <div className={styles.Entire}>
         {loading ? (<h2>로딩중 입니다.</h2>) :
@@ -109,8 +125,12 @@ const MinuteBitcoin = () => {
 
     <br/>
     <h3>지금 가지고 있는돈: {Math.ceil(haveMoney).toLocaleString()}\</h3>
-    <input type='number' placeholder="몇개의 코인을 사실껀가요?"/>
-    
+    <input type='number'
+     placeholder="몇개의 코인을 사실껀가요?" 
+     onChange={CoinOnChange}
+     />
+     
+    <button onClick = {onclick}>사기</button>
     </span>
     </div>
 }
