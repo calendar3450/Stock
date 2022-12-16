@@ -34,14 +34,19 @@ const MonthBitcoin = () => {
       },[market]);
     
     const onclick = () => {
-        
-        if (haveMoney-(coins[0].trade_price*coinCount)<0) {
-            alert('돈이 부족합니다.');
+        if (coinCount<0){
+            alert('코인 개수를 0개 이상으로 해주세요');
+
         }
-        else {
-            setHaveMoney(haveMoney-(coins[0].trade_price*coinCount))
-            // haveMoney = haveMoney-(coins[0].trade_price*coinCount);
-            console.log(haveMoney);
+        else{
+            if (haveMoney-(coins[0].trade_price*coinCount)<0) {
+                alert('돈이 부족합니다.');
+            }
+            else {
+                setHaveMoney(haveMoney-(coins[0].trade_price*coinCount))
+                // haveMoney = haveMoney-(coins[0].trade_price*coinCount);
+                console.log(haveMoney);
+            }
         }
         
     }
@@ -134,15 +139,19 @@ const MonthBitcoin = () => {
     type='number' 
     placeholder="몇개의 코인을 사실껀가요?"
     onChange={CoinOnChange}
+    className={styles.coinInput}
     />
-    <button onClick = {onclick}>사기</button>
+    <button 
+    onClick = {onclick}
+    className={styles.buyButton}
+    >사기</button>
 
     </span>
     </div>
     </div>
 }
     <div className={styles.List}>
-        {/* <a className={Location.ListTop}>코인 리스트</a> */}
+
           {listLoading ? (<h2>로딩중 입니다.....</h2>) :
           <div className={styles.MainCoinList}>
             {lists.map((coin)=> (

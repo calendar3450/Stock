@@ -34,15 +34,20 @@ const MinuteBitcoin = () => {
         },[market]);
     const onclick = () => {
     
-        if (haveMoney-(coins[0].trade_price*coinCount)<0) {
-            alert('돈이 부족합니다.');
+        if (coinCount<0){
+            alert('코인 개수를 0개 이상으로 해주세요');
+
         }
-        else {
-            setHaveMoney(haveMoney-(coins[0].trade_price*coinCount))
-            // haveMoney = haveMoney-(coins[0].trade_price*coinCount);
-            console.log(haveMoney);
+        else{
+            if (haveMoney-(coins[0].trade_price*coinCount)<0) {
+                alert('돈이 부족합니다.');
+            }
+            else {
+                setHaveMoney(haveMoney-(coins[0].trade_price*coinCount))
+                // haveMoney = haveMoney-(coins[0].trade_price*coinCount);
+                console.log(haveMoney);
+            }
         }
-        
     }
     //입력창에 코인 갯수 넣기.
     const CoinOnChange = (e) => {

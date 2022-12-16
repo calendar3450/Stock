@@ -2,7 +2,7 @@ import {useState,useEffect} from "react"
 import { Link } from "react-router-dom";
 import Location from './CSS/Location.module.css';
 import Main from './CSS/MainColor.module.css';
-//실시간 가격 변동, cors문제
+//실시간 가격 변동
 
 const Home = ()=> {
     const [coins,setCoins]=useState([]);
