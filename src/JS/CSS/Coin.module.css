@@ -86,9 +86,13 @@
 }
 
 .coinInput{
-    
+    background-color: white;
+    border-color: white;
+    border: 1px;
 }
 
 .buyButton{
-    
+    background-color: white;
+    border-color: white;
+    border: 1px;
 }
