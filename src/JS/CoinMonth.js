@@ -14,7 +14,8 @@ const MonthBitcoin = () => {
     const location = useLocation();
     const [haveMoney,setHaveMoney] = useState(location.state.money);
     const [coinCount,setCoinCount] = useState(0);
-    
+    const [haveCoinList,setCoinList] = useState(location.state.haveCoin);
+
     useEffect(()=> {
         fetch(`https://api.upbit.com/v1/candles/months?market=${market}&count=200`)
         .then(response => response.json())
@@ -44,8 +45,8 @@ const MonthBitcoin = () => {
             }
             else {
                 setHaveMoney(haveMoney-(coins[0].trade_price*coinCount))
-                // haveMoney = haveMoney-(coins[0].trade_price*coinCount);
-                console.log(haveMoney);
+                setCoinList([...haveCoinList,{이름:market,갯수:coinCount}])
+                console.log(haveCoinList);
             }
         }
         
@@ -53,6 +54,7 @@ const MonthBitcoin = () => {
     //입력창에 코인 갯수 넣기.
     const CoinOnChange = (e) => {
         setCoinCount(e.target.value);
+        console.log(haveCoinList,market);
     }
 
    return (

@@ -14,7 +14,7 @@ const Home = ()=> {
     const [bitLoading,isBitLoading]= useState(true);
     const [ethLoading,isEthLoading]= useState(true);
     const [xrpLoading,isXrpLoading]= useState(true);
-    
+    const [haveCoinList,setCoinList] = useState([]);
 
     //업비트로 리스트 뽑기.
     useEffect(()=> {
@@ -22,10 +22,8 @@ const Home = ()=> {
         .then(response => response.json())
         .then(response => {
           setCoins(response);
-          isLoading(false);
-          
+          isLoading(false); 
         })
-
       },[])
 
     //업비트로 비트코인 가격 보기.
@@ -48,7 +46,7 @@ const Home = ()=> {
       })
     },[])
 
-    //업비트로 이더리움 가격 보기.
+    //업비트로 리플 가격 보기.
     useEffect(() =>{
       fetch(`https://api.upbit.com/v1/trades/ticks?market=KRW-XRP&count=1`)
       .then(response => response.json())
@@ -84,7 +82,9 @@ const Home = ()=> {
 
                   <Link to={`/coinMonth/${coin.market}`} 
                         style={{textDecoration: 'none'}} 
-                        state={{money: haveMoney}}>
+                        state={{money: haveMoney,
+                        haveCoin : haveCoinList}}
+                        >
                     <a className={Main.Coin}>{coin.korean_name}</a>
                       </Link>
 

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
 
 .Loading{
-    color:orange;
+    color:black;
 }
 
 .Entire{
@@ -27,7 +27,7 @@
     font-size: 34px;
     position: relative;
     left: 240px;
-    color:orange;
+    color:black;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
