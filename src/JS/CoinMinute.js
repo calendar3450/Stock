@@ -133,9 +133,11 @@ const MinuteBitcoin = () => {
     <input type='number'
      placeholder="몇개의 코인을 사실껀가요?" 
      onChange={CoinOnChange}
+     className={styles.coinInput}
      />
-     
-    <button onClick = {onclick}>사기</button>
+
+    <button onClick = {onclick}
+    className={styles.buyButton}>사기</button>
     </span>
     </div>
 }

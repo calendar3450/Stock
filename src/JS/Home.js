@@ -23,7 +23,7 @@ const Home = ()=> {
         .then(response => {
           setCoins(response);
           isLoading(false); 
-        })
+        }).catch(err => console.error(err));
       },[])
 
     //업비트로 비트코인 가격 보기.
@@ -56,7 +56,8 @@ const Home = ()=> {
       })
     },[])
       return(
-        <div className={Main.Entire}>
+        <div id="Entire">
+          
         <Link to='/' style={{textDecoration: 'none'}}>
         <a className={Main.Main}>코인 시세를 보자구요!</a>
         </Link>
@@ -64,7 +65,7 @@ const Home = ()=> {
         <div className={Main.MainCoinNCoinList}>
           {bitLoading || ethLoading || xrpLoading ? (<h2>로딩중 입니다...</h2>):
           <div className={Main.MainCoinsCollection}>
-          <h1 className={Location.MainCoin}>주요 코인 시세 24H</h1>
+          <h1 className={Location.MainCoin} id="MainCoin">주요 코인 시세 24H</h1>
           <h2 className={Location.MainCoin}>BitCoin,비트코인: {(coinBTC[0].change_price /coinBTC[0].prev_closing_price *100).toFixed(2)}%</h2>
           <h3 className={Location.MainCoin}>시세:{coinBTC[0].trade_price.toLocaleString()}\</h3>
           <h2 className={Location.MainCoin}>Ethereum,이더리움: {(coinETH[0].change_price /coinETH[0].prev_closing_price *100).toFixed(2)}%</h2>

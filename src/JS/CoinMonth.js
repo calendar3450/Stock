@@ -45,7 +45,7 @@ const MonthBitcoin = () => {
             }
             else {
                 setHaveMoney(haveMoney-(coins[0].trade_price*coinCount))
-                setCoinList([...haveCoinList,{이름:market,갯수:coinCount}])
+                setCoinList([...haveCoinList,{id:1,이름:market,갯수:coinCount}])
                 console.log(haveCoinList);
             }
         }
@@ -58,7 +58,6 @@ const MonthBitcoin = () => {
     }
 
    return (
-    
     <div className={styles.Entire}>
         {loading ? (<h2>로딩중 입니다.</h2>) :
         

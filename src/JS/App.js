@@ -4,6 +4,7 @@ import Home from"./Home";
 import MinuteBitcoin from "./CoinMinute";
 import WeekBitcoin from "./CoinWeek";
 import DayBitcoin from "./CoinDay";
+import Explain from "./Explain";
 
 const App = () => {
   return(
@@ -14,6 +15,7 @@ const App = () => {
         <Route path='/coinMinute/:market' element={<MinuteBitcoin/>}/>
         <Route path='/coinWeek/:market' element={<WeekBitcoin/>}/>
         <Route path='/coinDay/:market' element={<DayBitcoin/>}/>
+        <Route path='/explain' element={<Explain/>}/>
       </Routes>
     </Router>
   )
