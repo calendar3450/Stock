@@ -4,6 +4,8 @@ import  {useParams,useLocation} from "react-router-dom";
 import styles from "./CSS/Coin.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import Transaction from "./Transaction";
+import CoinPrice from "./CoinPrice";
 
 const MonthBitcoin = () => {
     const [coins,setCoins]=useState([]);
@@ -58,10 +60,13 @@ const MonthBitcoin = () => {
     }
 
    return (
+    
     <div className={styles.Entire}>
+    
         {loading ? (<h2>로딩중 입니다.</h2>) :
         
     <div className={styles.centerSquare}>
+        
 
         <Link to={`/`} style={{textDecoration: 'none'}}>
             <a className={styles.Main}>코인 시세를 보자구요!</a>
@@ -69,6 +74,9 @@ const MonthBitcoin = () => {
     <div>
         
         <span>
+
+        <CoinPrice/>
+
         <ApexChart
         className={styles.Graph}
         width="250%"
@@ -90,7 +98,7 @@ const MonthBitcoin = () => {
         ]}
         options={{
             title: {
-                text: `${coins[0].market} 가격: ${coins[0].trade_price}원`,
+                text:"",
                 align: 'left'
               },
             chart: {
@@ -148,6 +156,11 @@ const MonthBitcoin = () => {
     >사기</button>
 
     </span>
+
+    {/* <Transaction/> */}
+
+    
+
     </div>
     </div>
 }
@@ -176,7 +189,6 @@ const MonthBitcoin = () => {
 
 }
 
-//typeScript 제대로 배우면 지워야징~
 MonthBitcoin.propTypes = {
     coins: PropTypes.arrayOf(
         PropTypes.shape({

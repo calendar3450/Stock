@@ -62,6 +62,7 @@ const Home = ()=> {
         <a className={Main.Main}>코인 시세를 보자구요!</a>
         </Link>
         <p/>
+        {/* 메인 코인 가격 창 */}
         <div className={Main.MainCoinNCoinList}>
           {bitLoading || ethLoading || xrpLoading ? (<h2>로딩중 입니다...</h2>):
           <div className={Main.MainCoinsCollection}>
