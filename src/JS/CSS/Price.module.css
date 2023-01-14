@@ -1,0 +1,11 @@
+.CoinName{
+    font-size: 25px;
+}
+
+.CoinMinus{
+    color: blue;
+}
+
+.CoinPlus{
+    color: red;
+}

@@ -143,7 +143,7 @@ const MonthBitcoin = () => {
     </Link>
     <br/>
     
-    <h3>지금 가지고 있는돈: {Math.ceil(haveMoney).toLocaleString()}\</h3>
+    <h3>지금 가지고 있는돈: {Math.ceil(haveMoney).toLocaleString()}원</h3>
     <input 
     type='number' 
     placeholder="몇개의 코인을 사실껀가요?"

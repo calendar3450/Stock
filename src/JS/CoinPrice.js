@@ -1,5 +1,6 @@
 import {useState,useEffect} from "react"
 import  {useParams} from "react-router-dom";
+import styles from "./CSS/Price.module.css"
 
 const CoinPrice= () => {
     const {market} = useParams();
@@ -20,12 +21,23 @@ const CoinPrice= () => {
         <div>
             {loading ? null : 
             <div>
-            <span>{coinInform[0].market} </span>
-            <span>{coinInform[0].trade_price}\ </span>
-            <span>{(coinInform[0].signed_change_rate * 100).toFixed(3)}% </span>
-            <span>({coinInform[0].signed_change_price})</span>
+            <span className={styles.CoinName}>{coinInform[0].market} </span>
+            {coinInform[0].change === "RISE" ? 
+        <div>
+            <span className={styles.CoinPlus}>{coinInform[0].trade_price}원 </span>
+            <span className={styles.CoinPlus}>+{(coinInform[0].signed_change_rate * 100).toFixed(3)}% </span>
+            <span className={styles.CoinPlus}>({coinInform[0].signed_change_price})</span>
+            </div>
+            :
+            <div>
+            <span className={styles.CoinMinus}>{coinInform[0].trade_price}원 </span>
+            <span className={styles.CoinMinus}>-{(coinInform[0].signed_change_rate * 100).toFixed(3)}% </span>
+            <span className={styles.CoinMinus}>({coinInform[0].signed_change_price})</span>
+            </div>
+          }
         </div>
         }
+        
         </div>
       )
     }
