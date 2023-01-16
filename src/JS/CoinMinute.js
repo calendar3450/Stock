@@ -4,6 +4,7 @@ import  {useParams,useLocation} from "react-router-dom";
 import styles from "./CSS/Coin.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import CoinPrice from "./CoinPrice";
 
 const MinuteBitcoin = () => {
     const [coins,setCoins]=useState([]);
@@ -53,6 +54,7 @@ const MinuteBitcoin = () => {
     const CoinOnChange = (e) => {
         setCoinCount(e.target.value);
     }
+
    return (
     <div className={styles.Entire}>
         {loading ? (<h2>로딩중 입니다.</h2>) :
@@ -63,6 +65,9 @@ const MinuteBitcoin = () => {
         </Link>
 
         <span>
+
+        <CoinPrice/>
+
         <ApexChart
         className={styles.Graph}
         width="250%"
@@ -84,7 +89,7 @@ const MinuteBitcoin = () => {
         ]}
         options={{
             title: {
-                text: `${coins[0].market} 가격: ${coins[0].trade_price}원`,
+                text: ` `,
                 align: 'left'
               },
             chart: {

@@ -26,12 +26,12 @@ const CoinPrice= () => {
             <div>
             <span className={styles.CoinPlus}>{coinInform[0].trade_price}원 </span>
             <span className={styles.CoinPlus}>+{(coinInform[0].signed_change_rate * 100).toFixed(3)}% </span>
-            <span className={styles.CoinPlus}>({coinInform[0].signed_change_price})</span>
+            <span className={styles.CoinPlus}>(+{coinInform[0].signed_change_price})</span>
             </div>
             :
             <div>
             <span className={styles.CoinMinus}>{coinInform[0].trade_price}원 </span>
-            <span className={styles.CoinMinus}>-{(coinInform[0].signed_change_rate * 100).toFixed(3)}% </span>
+            <span className={styles.CoinMinus}>{(coinInform[0].signed_change_rate * 100).toFixed(3)}% </span>
             <span className={styles.CoinMinus}>({coinInform[0].signed_change_price})</span>
             </div>
           }

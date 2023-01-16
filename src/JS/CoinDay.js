@@ -4,6 +4,7 @@ import  {useParams,useLocation} from "react-router-dom";
 import styles from "./CSS/Coin.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import CoinPrice from "./CoinPrice";
 
 const DayBitcoin = () => {
     const [coins,setCoins]=useState([]);
@@ -64,6 +65,9 @@ const DayBitcoin = () => {
         </Link>
 
         <span>
+
+        <CoinPrice/>
+
         <ApexChart
         className={styles.Graph}
         width="250%"
@@ -85,7 +89,7 @@ const DayBitcoin = () => {
         ]}
         options={{
             title: {
-                text: `${coins[0].market} 가격: ${coins[0].trade_price}원`,
+                text: ` `,
                 align: 'left'
               },
             chart: {

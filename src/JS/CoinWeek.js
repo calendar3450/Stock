@@ -4,6 +4,7 @@ import  {useParams, useLocation} from "react-router-dom";
 import styles from "./CSS/Coin.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import CoinPrice from "./CoinPrice";
 
 const WeekBitcoin = () => {
     const [coins,setCoins]=useState([]);
@@ -66,6 +67,9 @@ const WeekBitcoin = () => {
             <a className={styles.Main}>코인 시세를 보자구요!</a>
         </Link>
         <span>
+
+        <CoinPrice/>
+        
         <ApexChart
         className={styles.Graph}
         width="250%"
@@ -87,7 +91,7 @@ const WeekBitcoin = () => {
         ]}
         options={{
             title: {
-                text: `${coins[0].market} 가격: ${coins[0].trade_price}원`,
+                text: ` `,
                 align: 'left'
               },
             chart: {
