@@ -19,6 +19,7 @@ const CoinPrice= () => {
 
       return (
         <div>
+
             {loading ? null : 
             <div>
             <span className={styles.CoinName}>{coinInform[0].market} </span>
@@ -35,6 +36,7 @@ const CoinPrice= () => {
             <span className={styles.CoinMinus}>({coinInform[0].signed_change_price})</span>
             </div>
           }
+        
         </div>
         }
         

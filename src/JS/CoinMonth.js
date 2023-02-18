@@ -4,7 +4,7 @@ import  {useParams,useLocation} from "react-router-dom";
 import styles from "./CSS/Coin.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-import Transaction from "./Transaction";
+import HaveCoin from './HaveCoin';
 import CoinPrice from "./CoinPrice";
 
 const MonthBitcoin = () => {
@@ -47,16 +47,15 @@ const MonthBitcoin = () => {
             }
             else {
                 setHaveMoney(haveMoney-(coins[0].trade_price*coinCount))
-                setCoinList([...haveCoinList,{id:1,이름:market,갯수:coinCount}])
-                console.log(haveCoinList);
+                setCoinList([...haveCoinList,{이름:market,갯수:coinCount}])
             }
         }
         
     }
+
     //입력창에 코인 갯수 넣기.
     const CoinOnChange = (e) => {
         setCoinCount(e.target.value);
-        console.log(haveCoinList,market);
     }
 
    return (
@@ -66,14 +65,13 @@ const MonthBitcoin = () => {
         {loading ? (<h2>로딩중 입니다.</h2>) :
         
     <div className={styles.centerSquare}>
-        
 
         <Link to={`/`} style={{textDecoration: 'none'}}>
             <a className={styles.Main}>코인 시세를 보자구요!</a>
         </Link>
     <div>
         
-        <span>
+        <span> 
 
         <CoinPrice/>
 
@@ -159,7 +157,7 @@ const MonthBitcoin = () => {
 
     {/* <Transaction/> */}
 
-    
+    <HaveCoin/>
 
     </div>
     </div>

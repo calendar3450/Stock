@@ -33,6 +33,8 @@ const DayBitcoin = () => {
             setListLoading(false);
         })
         },[market]);
+    
+    
     const onclick = () => {
     
         if (coinCount<0){
